@@ -1,4 +1,6 @@
-﻿namespace C43_G05_ADV01assigment
+﻿using System.Collections;
+
+namespace C43_G05_ADV01assigment
 {
     internal class Program
     {
@@ -16,7 +18,13 @@
             //Console.WriteLine(); 
             #endregion
 
-           
+            ArrayList numbers = new ArrayList { 1, 2, 3, 4, 5 };
+            ReverseArrayListGeneric<int>.Reverse(numbers);
+
+            foreach (int num in numbers)
+            {
+                Console.Write(num + " "); 
+            }
 
 
 
