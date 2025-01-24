@@ -18,13 +18,25 @@ namespace C43_G05_ADV01assigment
             //Console.WriteLine(); 
             #endregion
 
-            ArrayList numbers = new ArrayList { 1, 2, 3, 4, 5 };
-            ReverseArrayListGeneric<int>.Reverse(numbers);
+            #region ex3
+            //ArrayList numbers = new ArrayList { 1, 2, 3, 4, 5 };
+            //ReverseArrayListGeneric<int>.Reverse(numbers);
 
-            foreach (int num in numbers)
+            //foreach (int num in numbers)
+            //{
+            //    Console.Write(num + " ");
+            //} 
+            #endregion
+
+            #region ex4 evennumber
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            List<int> evenNumbers = Evennumber.FindEvenNumbers(numbers);
+
+            foreach (int even in evenNumbers)
             {
-                Console.Write(num + " "); 
-            }
+                Console.WriteLine(even);
+            } 
+            #endregion
 
 
 
