@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C43_G05_ADV01assigment
+{
+    internal class Range<T> where T : IComparable<T>
+    {
+        private T _min;
+        private T _max;
+
+        public Range(T min, T max)
+        {
+            if (min.CompareTo(max) > 0)
+            {
+                throw new ArgumentException("Minimum value must be less than or equal to maximum value.");
+            }
+
+            _min = min;
+            _max = max;
+        }
+
+        public bool IsInRange(T value)
+        {
+            return value.CompareTo(_min) >= 0 && value.CompareTo(_max) <= 0;
+        }
+        public T Length()
+        {
+            dynamic minDynamic = _min;
+            dynamic maxDynamic = _max;
+            return (T)Convert.ChangeType(maxDynamic - minDynamic, typeof(T));
+        }
+    }
+}
